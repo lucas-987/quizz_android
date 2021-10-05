@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.quizz.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_quizzManagementFragment"
+            app:destination="@id/quizzManagementFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_gameSelectionFragment"
+            app:destination="@id/gameSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizzManagementFragment"
+        android:name="com.example.quizz.ui.QuizzManagementFragment"
+        android:label="fragment_quizz_management"
+        tools:layout="@layout/fragment_quizz_management" />
+    <fragment
+        android:id="@+id/gameSelectionFragment"
+        android:name="com.example.quizz.ui.GameSelectionFragment"
+        android:label="fragment_game_selection"
+        tools:layout="@layout/fragment_game_selection" >
+        <action
+            android:id="@+id/action_gameSelectionFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.quizz.ui.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" />
+</navigation>

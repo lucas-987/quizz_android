@@ -21,10 +21,5 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        QuizzRepository rep = new QuizzRepository(getApplication());
-        LiveData<List<Quizz>> quizzs = rep.getAllQuizzs();
-
-        /*List<Quizz> test = quizzs.getValue();
-        rep.addQuizz(quizzs.getValue().get(0));*/
     }
 }
