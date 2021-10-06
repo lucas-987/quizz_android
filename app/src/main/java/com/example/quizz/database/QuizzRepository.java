@@ -4,18 +4,25 @@ import android.app.Application;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import androidx.arch.core.util.Function;
+import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.Transformations;
 import androidx.room.Transaction;
+import androidx.room.TypeConverter;
 
 import com.example.quizz.Model.Question;
 import com.example.quizz.Model.Quizz;
 import com.example.quizz.api.QuizzService;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -27,15 +34,23 @@ public class QuizzRepository {
     private QuizzDAO quizzDAO;
     private QuestionDAO questionDAO;
 
-    private MutableLiveData<List<Quizz>> allQuizzs;
+    private LiveData<List<Quizz>> allQuizzs;
 
     public QuizzRepository(Application application) {
-        allQuizzs = new MutableLiveData<List<Quizz>>();
-        allQuizzs.setValue(new ArrayList<Quizz>());
-
         database = ApplicationDatabase.getInstance(application);
         quizzDAO = database.quizzDAO();
         questionDAO = database.questionDAO();
+
+        allQuizzs = Transformations.map(quizzDAO.getAllQuizzs(), new Function<List<QuizzWithQuestions>, List<Quizz>>() {
+            @Override
+            public List<Quizz> apply(List<QuizzWithQuestions> input) {
+                List<Quizz> result = new ArrayList<>();
+                for (QuizzWithQuestions quizzWithQuestions : input) {
+                    result.add(TypesConverter.QuizzWithQuestionsToQuizz(quizzWithQuestions));
+                }
+                return result;
+            }
+        });
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://dept-info.univ-fcomte.fr/joomla/images/CR0700/JSON/")
@@ -58,7 +73,6 @@ public class QuizzRepository {
                 Quizz quizz = response.body();
                 quizz.setTitle("Animaux");
 
-                allQuizzs.getValue().add(quizz);
                 addQuizz(quizz);
             }
 

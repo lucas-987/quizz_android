@@ -3,6 +3,8 @@ package com.example.quizz.Model;
 import com.google.gson.annotations.SerializedName;
 
 public class Question {
+    private long _id;
+
     @SerializedName("question")
     private String _sentence;
 
@@ -12,6 +14,12 @@ public class Question {
     public Question(String sentence, boolean anwser) {
         this._sentence = sentence;
         this._anwser = anwser;
+    }
+
+    public Question(long id, String sentence, boolean anwser) {
+        _id = id;
+        _sentence = sentence;
+        _anwser = anwser;
     }
 
     public String getQuestion() {
@@ -28,5 +36,13 @@ public class Question {
 
     public void setAnwser(boolean anwser) {
         this._anwser = anwser;
+    }
+
+    public long getId() {
+        return _id;
+    }
+
+    public void setId(long id) {
+        this._id = id;
     }
 }

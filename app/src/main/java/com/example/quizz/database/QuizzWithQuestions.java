@@ -10,7 +10,8 @@ public class QuizzWithQuestions {
 
     @Relation(
         parentColumn = "id",
-        entityColumn = "quizzId"
+        entityColumn = "quizzId",
+        entity = QuestionEntity.class
     )
     public List<QuestionEntity> questions;
 }

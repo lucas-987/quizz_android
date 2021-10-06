@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.example.quizz.Model.Question;
 import com.example.quizz.Model.Quizz;
 
-@Database(entities = {QuizzEntity.class, QuestionEntity.class}, version = 1)
+@Database(entities = {QuizzEntity.class, QuestionEntity.class}, version = 2)
 public abstract class ApplicationDatabase extends RoomDatabase {
 
     private static ApplicationDatabase instance;
