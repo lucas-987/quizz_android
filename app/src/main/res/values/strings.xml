@@ -5,4 +5,13 @@
 
     <string name="button_play">Play</string>
     <string name="button_quizz_management">Manage quizzes</string>
+
+    <string name="game_true_button">True</string>
+    <string name="game_false_button">False</string>
+    <string name="game_show_anwser_button">Show anwser</string>
+    <string name="game_next_button">Next</string>
+    <string name="game_show_anwser_confirm">Do you really want to do it ?</string>
+
+    <string name="wrong_anwser">Incorrect</string>
+    <string name="anwser_viewed_message">You have seen the awnser !</string>
 </resources>

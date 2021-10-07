@@ -35,5 +35,26 @@
         android:id="@+id/gameFragment"
         android:name="com.example.quizz.ui.GameFragment"
         android:label="fragment_game"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_gameScoreFragement"
+            app:destination="@id/gameScoreFragement" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameShowAnswerFragment"
+            app:destination="@id/gameShowAnswerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameScoreFragement"
+        android:name="com.example.quizz.ui.GameScoreFragement"
+        android:label="fragment_game_score"
+        tools:layout="@layout/fragment_game_score" >
+        <action
+            android:id="@+id/action_gameScoreFragement_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameShowAnswerFragment"
+        android:name="com.example.quizz.ui.GameShowAnswerFragment"
+        android:label="fragment_game_show_answer"
+        tools:layout="@layout/fragment_game_show_answer" />
 </navigation>
