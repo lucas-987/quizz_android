@@ -11,12 +11,12 @@ import com.example.quizz.database.QuizzRepository;
 
 import java.util.List;
 
-public class GameSelectionViewModel extends AndroidViewModel {
+public class QuizzSelectionViewModel extends AndroidViewModel {
 
     private QuizzRepository quizzRepository;
     private LiveData<List<Quizz>> quizzes;
 
-    public GameSelectionViewModel(@NonNull Application application) {
+    public QuizzSelectionViewModel(@NonNull Application application) {
         super(application);
         quizzRepository = new QuizzRepository(application);
         quizzes = quizzRepository.getAllQuizzs();
@@ -24,5 +24,17 @@ public class GameSelectionViewModel extends AndroidViewModel {
 
     public LiveData<List<Quizz>> getAllQuizzes() {
         return quizzes;
+    }
+
+    public void deleteQuizz(Quizz quizz) {
+        quizzRepository.deleteQuizz(quizz);
+    }
+
+    public void addQuizz(Quizz quizz) {
+        quizzRepository.addQuizz(quizz);
+    }
+
+    public void loadFromUrl(String url) {
+        quizzRepository.loadQuizzFromUrl(url);
     }
 }

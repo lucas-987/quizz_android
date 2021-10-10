@@ -14,4 +14,9 @@ public class QuizzWithQuestions {
         entity = QuestionEntity.class
     )
     public List<QuestionEntity> questions;
+
+    public QuizzWithQuestions(QuizzEntity quizz, List<QuestionEntity> questions) {
+        this.quizz = quizz;
+        this.questions = questions;
+    }
 }

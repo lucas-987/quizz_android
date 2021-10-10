@@ -5,6 +5,8 @@
 
     <string name="button_play">Play</string>
     <string name="button_quizz_management">Manage quizzes</string>
+    <string name="button_select">Manage</string>
+    <string name="button_add_question">+</string>
 
     <string name="game_true_button">True</string>
     <string name="game_false_button">False</string>
@@ -14,4 +16,17 @@
 
     <string name="wrong_anwser">Incorrect</string>
     <string name="anwser_viewed_message">You have seen the awnser !</string>
+
+    <string name="question_placeholder">Question</string>
+    <string name="answer_placeholder">answer (true or false)</string>
+
+    <string name="add_quizz_dialog_title">Add or upload a quizz</string>
+    <string name="add_quizz_from_url">Load from url</string>
+    <string name="add_quizz_from_url_button">Load</string>
+    <string name="add_quizz_from_url_placeholder">Url</string>
+    <string name="create_new_quizz">Create a new quizz</string>
+    <string name="create_new_quizz_button">Create</string>
+    <string name="create_new_quizz_title_placeholder">Title</string>
+    <string name="url_empty_error">Url required</string>
+    <string name="title_empty_error">Title required</string>
 </resources>

@@ -11,6 +11,8 @@ public class Question {
     @SerializedName("reponse")
     private boolean _anwser;
 
+    private int _order;
+
     public Question(String sentence, boolean anwser) {
         this._sentence = sentence;
         this._anwser = anwser;
@@ -20,6 +22,13 @@ public class Question {
         _id = id;
         _sentence = sentence;
         _anwser = anwser;
+    }
+
+    public Question(long id, String sentence, boolean anwser, int order) {
+        _id = id;
+        _sentence = sentence;
+        _anwser = anwser;
+        _order = order;
     }
 
     public String getQuestion() {
@@ -44,5 +53,13 @@ public class Question {
 
     public void setId(long id) {
         this._id = id;
+    }
+
+    public int getOrder() {
+        return _order;
+    }
+
+    public void setOrder(int order) {
+        this._order = order;
     }
 }

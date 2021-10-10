@@ -20,8 +20,14 @@ public class TypesConverter {
         return result;
     }
 
+
     /*
     public static QuizzWithQuestions QuizzToQuizzWithQuestions(Quizz quizz) {
 
     }*/
+
+    public static Question QuestionEntityToQuestion(QuestionEntity questionEntity) {
+        Question result = new Question(questionEntity.id, questionEntity.sentence, questionEntity.anwser, questionEntity.order);
+        return result;
+    }
 }

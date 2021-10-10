@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
     private View.OnClickListener gameManagementButtonClicked = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Navigation.findNavController(getView()).navigate(R.id.action_homeFragment_to_quizzManagementFragment);
+            Navigation.findNavController(getView()).navigate(R.id.action_homeFragment_to_quizzManagementSelectionFragment);
         }
     };
 

@@ -98,8 +98,6 @@ public class GameFragment extends Fragment {
         int selectedQuestionIndex = gameViewModel.getSelectedQuestionIndex();
         Question currentQuestion = gameViewModel.getSelectedQuizz().getQuestions().get(selectedQuestionIndex);
 
-        // TODO the api return booleans as "vrai" or "faux", GSON don't know how to convert them and asign a default value of false
-        //  idea : don't use retrofit for the example request handle json by hand and create a class that handle this
         if(currentQuestion.getAnwser() == anwser)
             gameViewModel.setScore(gameViewModel.getScore() + 1);
         else

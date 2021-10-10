@@ -11,17 +11,12 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_quizzManagementFragment"
-            app:destination="@id/quizzManagementFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_gameSelectionFragment"
             app:destination="@id/gameSelectionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_quizzManagementSelectionFragment"
+            app:destination="@id/quizzManagementSelectionFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/quizzManagementFragment"
-        android:name="com.example.quizz.ui.QuizzManagementFragment"
-        android:label="fragment_quizz_management"
-        tools:layout="@layout/fragment_quizz_management" />
     <fragment
         android:id="@+id/gameSelectionFragment"
         android:name="com.example.quizz.ui.GameSelectionFragment"
@@ -57,4 +52,35 @@
         android:name="com.example.quizz.ui.GameShowAnswerFragment"
         android:label="fragment_game_show_answer"
         tools:layout="@layout/fragment_game_show_answer" />
+    <fragment
+        android:id="@+id/quizzManagementSelectionFragment"
+        android:name="com.example.quizz.ui.QuizzManagementSelectionFragment"
+        android:label="fragment_quizz_management_selection"
+        tools:layout="@layout/fragment_quizz_management_selection" >
+        <action
+            android:id="@+id/action_quizzManagementSelectionFragment_to_quizzManagementFragment"
+            app:destination="@id/quizzManagementFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizzManagementFragment"
+        android:name="com.example.quizz.ui.QuizzManagementFragment"
+        android:label="fragment_quizz_management"
+        tools:layout="@layout/fragment_quizz_management" >
+        <action
+            android:id="@+id/action_quizzManagementFragment_to_questionEditorFragment"
+            app:destination="@id/questionEditorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionEditorFragment"
+        android:name="com.example.quizz.ui.QuestionEditorFragment"
+        android:label="fragment_question_editor"
+        tools:layout="@layout/fragment_question_editor" >
+        <argument
+            android:name="newQuestion"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/action_questionEditorFragment_to_quizzManagementFragment"
+            app:destination="@id/quizzManagementFragment" />
+    </fragment>
 </navigation>

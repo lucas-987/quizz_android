@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 
 import com.example.quizz.Model.Quizz;
 import com.example.quizz.R;
-import com.example.quizz.viewModel.GameSelectionViewModel;
+import com.example.quizz.viewModel.QuizzSelectionViewModel;
 import com.example.quizz.viewModel.GameViewModel;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class GameSelectionFragment extends Fragment {
     private RecyclerView recyclerView;
     private GameSelectionAdapter adapter;
 
-    private GameSelectionViewModel gameSelectionViewModel;
+    private QuizzSelectionViewModel gameSelectionViewModel;
 
     private GameSelectionAdapter.GameSelectionAdapterListener gameSelectionAdapterListener = new GameSelectionAdapter.GameSelectionAdapterListener() {
         @Override
@@ -50,7 +50,7 @@ public class GameSelectionFragment extends Fragment {
 
         adapter = new GameSelectionAdapter(gameSelectionAdapterListener);
 
-        gameSelectionViewModel = new ViewModelProvider(getActivity()).get(GameSelectionViewModel.class);
+        gameSelectionViewModel = new ViewModelProvider(getActivity()).get(QuizzSelectionViewModel.class);
         gameSelectionViewModel.getAllQuizzes().observe(getActivity(), quizzListChanged);
     }
 
