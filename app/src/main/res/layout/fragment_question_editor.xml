@@ -5,38 +5,54 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.QuestionEditorFragment">
+    tools:context=".ui.QuestionEditorFragment"
+    android:background="@color/background">
 
-    <EditText
-        android:id="@+id/questionEditor_question_editText"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/questionEditor_answer_editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:hint="@string/question_placeholder"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/container_background"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="120dp">
 
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/questionEditor_answer_editText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/questionEditor_add_button"
-        app:layout_constraintVertical_bias="0.75"
-        android:hint="@string/answer_placeholder"/>
+        <EditText
+            android:id="@+id/questionEditor_question_editText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/questionEditor_answer_editText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.75"
+            android:hint="@string/question_placeholder"
+            style="@style/editText"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_add_question"
-        android:id="@+id/questionEditor_add_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.5"/>
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/questionEditor_answer_editText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            android:hint="@string/answer_placeholder"
+            style="@style/editText"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_add_question"
+            android:id="@+id/questionEditor_add_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/questionEditor_answer_editText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.25"
+            style="@style/button"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

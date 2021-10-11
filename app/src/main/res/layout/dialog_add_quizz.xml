@@ -3,72 +3,110 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="16dp">
+    android:background="@color/background2"
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/addQuizzDialog_addUrl_textView"
-        android:text="@string/add_quizz_from_url"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.1"/>
+        android:background="@drawable/container_dialog_add_quizz_background"
+        app:layout_constraintVertical_bias="0.1"
+        android:id="@+id/addQuizzDialog_urlContainer_layout"
+        android:padding="16dp">
 
-    <EditText
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addQuizzDialog_addUrl_textView"
+            android:text="@string/add_quizz_from_url"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            style="@style/title3"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/addQuizzDialog_url_editText"
+            app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_addUrl_textView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            android:hint="@string/add_quizz_from_url_placeholder"
+            style="@style/editText"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_url_editText"
+            android:id="@+id/addQuizzDialog_validateUrl_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            android:text="@string/add_quizz_from_url_button"
+            style="@style/button"
+            android:layout_marginBottom="10dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/addQuizzDialog_url_editText"
-        app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_addUrl_textView"
+        app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_urlContainer_layout"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.05"
-        android:hint="@string/add_quizz_from_url_placeholder"/>
+        android:background="@drawable/container_dialog_add_quizz_background"
+        app:layout_constraintVertical_bias="0.5"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:padding="16dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_url_editText"
-        android:id="@+id/addQuizzDialog_validateUrl_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.05"
-        android:text="@string/add_quizz_from_url_button" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/addQuizzDialog_createNew_textView"
+            android:text="@string/create_new_quizz"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            style="@style/title3"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_validateUrl_button"
-        android:id="@+id/addQuizzDialog_createNew_textView"
-        android:text="@string/create_new_quizz"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.2"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_createNew_textView"
+            android:id="@+id/addQuizzDialog_createNew_editText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            android:hint="@string/create_new_quizz_title_placeholder"
+            style="@style/editText"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_createNew_textView"
-        android:id="@+id/addQuizzDialog_createNew_editText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.05"
-        android:hint="@string/create_new_quizz_title_placeholder"/>
+        <Button
+            android:id="@+id/addQuizzDialog_createNew_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_new_quizz_button"
+            app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_createNew_editText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            style="@style/button"
+            android:layout_marginBottom="10dp"/>
 
-    <Button
-        android:id="@+id/addQuizzDialog_createNew_Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/create_new_quizz_button"
-        app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_createNew_editText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.05"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Quizz</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="button_play">Play</string>
     <string name="button_quizz_management">Manage quizzes</string>
@@ -29,4 +27,6 @@
     <string name="create_new_quizz_title_placeholder">Title</string>
     <string name="url_empty_error">Url required</string>
     <string name="title_empty_error">Title required</string>
+
+    <string name="score">Score :</string>
 </resources>

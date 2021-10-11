@@ -4,40 +4,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.HomeFragment">
+    tools:context=".ui.HomeFragment"
+    android:background="@color/background">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/homeFragment_title_textView"
-        android:text="@string/app_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.25"/>
-
-    <Button
-        android:id="@+id/homeFragment_play_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_play"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/homeFragment_title_textView"
-        app:layout_constraintVertical_bias="0.25"/>
+        android:layout_marginTop="128dp"
+        android:layout_marginBottom="128dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/container_background"
+        android:outlineAmbientShadowColor="@color/white"
+        >
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/homeFragment_quizzManagement_button"
-        android:text="@string/button_quizz_management"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/homeFragment_play_button"
-        app:layout_constraintVertical_bias="0.25"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/homeFragment_title_textView"
+            android:text="@string/app_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.15"
+            style="@style/title1" />
+
+        <Button
+            android:id="@+id/homeFragment_play_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_play"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeFragment_title_textView"
+            app:layout_constraintVertical_bias="0.20"
+            style="@style/button" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/homeFragment_quizzManagement_button"
+            android:text="@string/button_quizz_management"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeFragment_play_button"
+            app:layout_constraintVertical_bias="0.20"
+            style="@style/button"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

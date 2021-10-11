@@ -4,16 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.GameScoreFragement">
+    tools:context=".ui.GameScoreFragement"
+    android:background="@color/background">
 
-    <TextView
-        android:id="@+id/gameScore_score_textView"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="score"/>
+        android:background="@drawable/container_background"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        app:layout_constraintVertical_bias="0.4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gameScore_scoreTitle_textView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.1"
+            android:text="@string/score"
+            style="@style/title1"/>
+
+        <TextView
+            android:id="@+id/gameScore_score_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/gameScore_scoreTitle_textView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="score"
+            style="@style/title1"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

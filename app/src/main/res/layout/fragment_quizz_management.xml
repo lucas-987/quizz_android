@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.QuizzManagementFragment">
+    tools:context=".ui.QuizzManagementFragment"
+    android:background="@color/background">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

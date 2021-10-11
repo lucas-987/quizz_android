@@ -4,18 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.GameFragment">
+    tools:context=".ui.GameFragment"
+    android:background="@color/background">
 
     <TextView
         android:id="@+id/game_question_textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.20"
-        android:text="Title"/>
+        android:text="Question"
+        android:textAlignment="center"
+        style="@style/title3"
+        android:background="@drawable/container_background"
+        android:padding="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
 
     <Button
         android:id="@+id/game_true_button"
@@ -27,7 +34,8 @@
         app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/game_question_textView"
-        app:layout_constraintVertical_bias="0.10" />
+        app:layout_constraintVertical_bias="0.10"
+        style="@style/button"/>
 
     <Button
         android:id="@+id/game_false_button"
@@ -38,7 +46,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/game_true_button"
         app:layout_constraintTop_toTopOf="@id/game_true_button"
-        app:layout_constraintHorizontal_bias="0.10"/>
+        app:layout_constraintHorizontal_bias="0.10"
+        style="@style/button"/>
 
     <Button
         android:id="@+id/game_showAnwser_button"
@@ -49,7 +58,8 @@
         app:layout_constraintVertical_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/game_show_anwser_button"/>
+        android:text="@string/game_show_anwser_button"
+        style="@style/button"/>
 
 
     <Button
@@ -61,6 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/game_showAnwser_button"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.025"
+        style="@style/button"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
-    android:layout_marginEnd="8dp">
+    android:layout_marginEnd="8dp"
+    app:cardBackgroundColor="@color/background2">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,7 +20,8 @@
             android:text="question"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/quizzManagementItem_answer_textView" />
+            app:layout_constraintBottom_toTopOf="@id/quizzManagementItem_answer_textView"
+            style="@style/cardMainText"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,7 +30,8 @@
             android:text="answer"
             app:layout_constraintTop_toBottomOf="@+id/quizzManagementItem_question_textView"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/cardMainText"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
