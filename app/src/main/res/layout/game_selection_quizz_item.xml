@@ -21,20 +21,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.25"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             style="@style/cardMainText"/>
 
         <Button
             android:id="@+id/gameSelectionItem_play_button"
+            style="@style/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/gameSelectionItem_quizzTitle_TextView"
-            app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/button_play"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/gameSelectionItem_quizzTitle_TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gameSelectionItem_quizzTitle_TextView" />
+
+        <TextView
+            android:id="@+id/gameSelectionItem_numberQuestions_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="question number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gameSelectionItem_play_button"
             app:layout_constraintBottom_toBottomOf="parent"
-            style="@style/button"/>
+            style="@style/title3"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -42,6 +42,7 @@ public class GameSelectionAdapter extends RecyclerView.Adapter<GameSelectionAdap
         Quizz currentQuizz = quizzes.get(position);
 
         holder.titleTextView.setText(currentQuizz.getTitle());
+        holder.questionNumberTextView.setText(currentQuizz.getQuestions().size() + " questions");
     }
 
     @Override
@@ -57,12 +58,14 @@ public class GameSelectionAdapter extends RecyclerView.Adapter<GameSelectionAdap
     class GameSelectionHolder extends RecyclerView.ViewHolder {
 
         private TextView titleTextView;
+        private TextView questionNumberTextView;
         private Button playButton;
 
         public GameSelectionHolder(@NonNull View itemView) {
             super(itemView);
 
             titleTextView = itemView.findViewById(R.id.gameSelectionItem_quizzTitle_TextView);
+            questionNumberTextView = itemView.findViewById(R.id.gameSelectionItem_numberQuestions_textView);
 
             playButton = itemView.findViewById(R.id.gameSelectionItem_play_button);
             playButton.setOnClickListener(new View.OnClickListener() {

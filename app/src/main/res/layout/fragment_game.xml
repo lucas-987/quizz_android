@@ -7,22 +7,49 @@
     tools:context=".ui.GameFragment"
     android:background="@color/background">
 
-    <TextView
-        android:id="@+id/game_question_textView"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/game_questionContainer_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.20"
-        android:text="Question"
-        android:textAlignment="center"
-        style="@style/title3"
-        android:background="@drawable/container_background"
-        android:padding="50dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+        app:layout_constraintVertical_bias="0.20">
+
+        <TextView
+            android:id="@+id/game_question_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.20"
+            android:text="Question"
+            android:textAlignment="center"
+            style="@style/title3"
+            android:background="@drawable/container_background"
+            android:padding="50dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/game_questionNumber_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="1/x"
+            style="@style/title3"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/kobe"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/game_true_button"
@@ -33,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/game_question_textView"
+        app:layout_constraintTop_toBottomOf="@id/game_questionContainer_layout"
         app:layout_constraintVertical_bias="0.10"
         style="@style/button"/>
 

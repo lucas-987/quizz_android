@@ -42,10 +42,20 @@
             android:hint="@string/add_quizz_from_url_placeholder"
             style="@style/editText"/>
 
+        <EditText
+            android:id="@+id/addQuizzDialog_defaultTitle_editText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/editText"
+            android:hint="@string/add_quizz_default_title_placeholder"
+            app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_url_editText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_url_editText"
+            app:layout_constraintTop_toBottomOf="@id/addQuizzDialog_defaultTitle_editText"
             android:id="@+id/addQuizzDialog_validateUrl_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +63,8 @@
             app:layout_constraintVertical_bias="0.2"
             android:text="@string/add_quizz_from_url_button"
             style="@style/button"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

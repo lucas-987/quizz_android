@@ -68,7 +68,7 @@ public class QuizzRepository {
         quizzService = retrofit.create(QuizzService.class);
     }
 
-    public void loadQuizzFromUrl(String url) {
+    public void loadQuizzFromUrl(String url, String defaultTitle) {
         quizzService.quizzFromUrl(url).enqueue(new retrofit2.Callback<Quizz>() {
 
             @Override
@@ -88,8 +88,12 @@ public class QuizzRepository {
 
                 quizz.setUrl(url);
                 String title = quizz.getTitle();
-                if(title == null || title.isEmpty())
-                    quizz.setTitle(url);
+                if(title == null || title.isEmpty()) {
+                    if(defaultTitle == null || defaultTitle.isEmpty())
+                        quizz.setTitle(url);
+                    else
+                        quizz.setTitle(defaultTitle);
+                }
 
                 deleteQuizzByUrl(url);
                 addQuizz(quizz);

@@ -18,10 +18,11 @@
     <string name="question_placeholder">Question</string>
     <string name="answer_placeholder">answer (true or false)</string>
 
-    <string name="add_quizz_dialog_title">Add or upload a quizz</string>
+    <string name="add_quizz_dialog_title">Add or download a quizz</string>
     <string name="add_quizz_from_url">Load from url</string>
     <string name="add_quizz_from_url_button">Load</string>
     <string name="add_quizz_from_url_placeholder">Url</string>
+    <string name="add_quizz_default_title_placeholder">Default title (optionnal)</string>
     <string name="create_new_quizz">Create a new quizz</string>
     <string name="create_new_quizz_button">Create</string>
     <string name="create_new_quizz_title_placeholder">Title</string>

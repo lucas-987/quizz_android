@@ -34,7 +34,7 @@ public class QuizzSelectionViewModel extends AndroidViewModel {
         quizzRepository.addQuizz(quizz);
     }
 
-    public void loadFromUrl(String url) {
-        quizzRepository.loadQuizzFromUrl(url);
+    public void loadFromUrl(String url, String defaultTitle) {
+        quizzRepository.loadQuizzFromUrl(url, defaultTitle);
     }
 }

@@ -26,6 +26,7 @@ public class GameFragment extends Fragment {
     private GameViewModel gameViewModel;
 
     private TextView questionTextView;
+    private TextView questionNumberTextView;
     private Button trueButton;
     private Button falseButton;
     private Button nextButton;
@@ -76,6 +77,9 @@ public class GameFragment extends Fragment {
         int currentQuestionIndex = gameViewModel.getSelectedQuestionIndex();
         questionTextView.setText(gameViewModel.getSelectedQuizz().getQuestions().get(currentQuestionIndex).getQuestion());
 
+        questionNumberTextView = view.findViewById(R.id.game_questionNumber_textView);
+        questionNumberTextView.setText((gameViewModel.getSelectedQuestionIndex() + 1) + "/" + gameViewModel.getSelectedQuizz().getQuestions().size());
+
         trueButton = view.findViewById(R.id.game_true_button);
         trueButton.setOnClickListener(trueButtonClicked);
 
@@ -112,13 +116,15 @@ public class GameFragment extends Fragment {
         int currentQuestionIndex = gameViewModel.getSelectedQuestionIndex();
         currentQuestionIndex++;
         gameViewModel.setSelectedQuestionIndex(currentQuestionIndex);
+        int nbQuestions = gameViewModel.getSelectedQuizz().getQuestions().size();
 
-        if(currentQuestionIndex == gameViewModel.getSelectedQuizz().getQuestions().size()) {
+        if(currentQuestionIndex == nbQuestions) {
             Navigation.findNavController(getView()).navigate(R.id.action_gameFragment_to_gameScoreFragement);
         }
         else {
             this.questionTextView.setText(gameViewModel.getSelectedQuizz().getQuestions().get(currentQuestionIndex).getQuestion());
             gameViewModel.setAnwserViewed(false);
+            this.questionNumberTextView.setText((currentQuestionIndex + 1) + "/" + nbQuestions);
         }
     }
 }

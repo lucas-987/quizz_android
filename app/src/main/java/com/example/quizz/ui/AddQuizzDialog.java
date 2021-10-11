@@ -28,6 +28,7 @@ public class AddQuizzDialog extends AppCompatDialogFragment {
     QuizzSelectionViewModel quizzSelectionViewModel;
 
     EditText urlEditText;
+    EditText defaultTitleEditText;
     EditText newQuizzTitleEditText;
 
     Button loadFromUrlButton;
@@ -37,13 +38,14 @@ public class AddQuizzDialog extends AppCompatDialogFragment {
         @Override
         public void onClick(View view) {
             String url = urlEditText.getText().toString();
+            String defaultTitle = defaultTitleEditText.getText().toString();
 
             if(url.isEmpty()) {
                 Toast.makeText(getContext(), getString(R.string.url_empty_error), Toast.LENGTH_LONG).show();
                 return;
             }
 
-            quizzSelectionViewModel.loadFromUrl(url);
+            quizzSelectionViewModel.loadFromUrl(url, defaultTitle);
             dismiss();
         }
     };
@@ -72,6 +74,7 @@ public class AddQuizzDialog extends AppCompatDialogFragment {
         View view = getLayoutInflater().inflate(R.layout.dialog_add_quizz, null);
 
         urlEditText = view.findViewById(R.id.addQuizzDialog_url_editText);
+        defaultTitleEditText = view.findViewById(R.id.addQuizzDialog_defaultTitle_editText);
         newQuizzTitleEditText = view.findViewById(R.id.addQuizzDialog_createNew_editText);
 
         loadFromUrlButton = view.findViewById(R.id.addQuizzDialog_validateUrl_button);
