@@ -1,9 +1,12 @@
 package com.example.quizz.database;
 
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "questions")
+import static androidx.room.ForeignKey.CASCADE;
+
+@Entity(tableName = "questions", foreignKeys = @ForeignKey(entity = QuizzEntity.class, parentColumns = "id", childColumns = "quizzId", onDelete = CASCADE))
 public class QuestionEntity {
     @PrimaryKey(autoGenerate = true)
     public long id;

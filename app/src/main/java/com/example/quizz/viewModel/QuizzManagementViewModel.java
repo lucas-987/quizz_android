@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.quizz.Model.Question;
 import com.example.quizz.Model.Quizz;
+import com.example.quizz.database.QuestionRepository;
 import com.example.quizz.database.QuizzRepository;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
 public class QuizzManagementViewModel extends AndroidViewModel {
 
     QuizzRepository quizzRepository;
+    QuestionRepository questionRepository;
 
     private long _quizzId;
     private LiveData<List<Question>> _questions;
@@ -23,20 +25,21 @@ public class QuizzManagementViewModel extends AndroidViewModel {
     public QuizzManagementViewModel(@NonNull Application application) {
         super(application);
         quizzRepository = new QuizzRepository(application);
+        questionRepository = new QuestionRepository(application);
     }
 
     public void addQuestion(Question question) {
         // TODO check that quizz is not null, handle failure
-        quizzRepository.addQuestion(question, _quizzId);
+        questionRepository.addQuestion(question, _quizzId);
     }
 
     public void deleteQuestion(Question question) {
         // TODO check that quizz is not null, handle failure
-        quizzRepository.deleteQuestion(question, _quizzId);
+        questionRepository.deleteQuestion(question, _quizzId);
     }
 
     public void updateQuestionsPosition(List<Question> questions) {
-        quizzRepository.updateQuestionsPositions(questions);
+        questionRepository.updateQuestionsPositions(questions);
     }
 
     public LiveData<List<Question>> getQuestions() {

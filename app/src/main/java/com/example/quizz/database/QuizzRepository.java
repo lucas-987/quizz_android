@@ -86,10 +86,12 @@ public class QuizzRepository {
                     return;
                 }
 
+                quizz.setUrl(url);
                 String title = quizz.getTitle();
                 if(title == null || title.isEmpty())
                     quizz.setTitle(url);
 
+                deleteQuizzByUrl(url);
                 addQuizz(quizz);
             }
 
@@ -112,7 +114,9 @@ public class QuizzRepository {
 
                 Quizz quizz = response.body();
                 quizz.setTitle("Animaux");
+                quizz.setUrl("https://dept-info.univ-fcomte.fr/joomla/images/CR0700/JSON/quizz_monde_animal.json");
 
+                deleteQuizzByUrl("https://dept-info.univ-fcomte.fr/joomla/images/CR0700/JSON/quizz_monde_animal.json");
                 addQuizz(quizz);
             }
 
@@ -143,7 +147,11 @@ public class QuizzRepository {
                 @Override
                 public void run() {
                     Quizz quizz = quizzes[0];
-                    long quizzId = database.quizzDAO().insert(new QuizzEntity(quizz.getTitle()));
+                    QuizzEntity quizzEntity = new QuizzEntity(quizz.getTitle());
+
+                    String url = quizz.getUrl();
+                    if(url != null) quizzEntity.url = url;
+                    long quizzId = database.quizzDAO().insert(quizzEntity);
 
                     List<Question> questions = quizz.getQuestions();
                     if(questions != null) {
@@ -211,66 +219,21 @@ public class QuizzRepository {
         });
     }
 
-    public void addQuestion(Question question, long quizzId) {
-        QuestionEntity questionEntity = new QuestionEntity(quizzId, question.getQuestion(), question.getAnwser(), question.getOrder());
-        new AddQuestionAsyncTask(database).execute(questionEntity);
+    public void deleteQuizzByUrl(String url) {
+        new DeleteQuizzByUrlAsyncTask(database).execute(url);
     }
 
-    private static class AddQuestionAsyncTask extends AsyncTask<QuestionEntity, Void, Void> {
-
+    private static class DeleteQuizzByUrlAsyncTask extends AsyncTask<String, Void, Void> {
         private ApplicationDatabase database;
 
-        private AddQuestionAsyncTask(ApplicationDatabase database) {
-            this.database = database;
-        }
-
-
-        @Override
-        protected Void doInBackground(QuestionEntity... questions) {
-            database.questionDAO().insert(questions[0]);
-            return null;
-        }
-    }
-
-    public void deleteQuestion(Question question, long quizzId) {
-        QuestionEntity questionEntity = new QuestionEntity(quizzId, question.getQuestion(), question.getAnwser(), question.getOrder());
-        questionEntity.id = question.getId();
-        new DeleteQuestionAsyncTask(database).execute(questionEntity);
-    }
-
-    private static class DeleteQuestionAsyncTask extends AsyncTask<QuestionEntity, Void, Void> {
-
-        private ApplicationDatabase database;
-
-        private DeleteQuestionAsyncTask(ApplicationDatabase database) {
-            this.database = database;
-        }
-
-
-        @Override
-        protected Void doInBackground(QuestionEntity... questions) {
-            database.questionDAO().delete(questions[0]);
-            return null;
-        }
-    }
-
-    public void updateQuestionsPositions(List<Question> questions) {
-        new UpdateQuestionsPositionsAsyncTask(database).execute(questions);
-    }
-
-    private static class UpdateQuestionsPositionsAsyncTask extends AsyncTask<List<Question>, Void, Void> {
-        private ApplicationDatabase database;
-
-        private UpdateQuestionsPositionsAsyncTask(ApplicationDatabase database) {
+        private DeleteQuizzByUrlAsyncTask(ApplicationDatabase database) {
             this.database = database;
         }
 
         @Override
-        protected Void doInBackground(List<Question>... questions) {
-            database.questionDAO().updatePositions(questions[0]);
+        protected Void doInBackground(String... strings) {
+            database.quizzDAO().deleteByUrl(strings[0]);
             return null;
         }
     }
-
-    // TODO split this repo in 2 (put question related operations on a QuestionRepository)
 }

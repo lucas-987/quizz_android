@@ -10,6 +10,8 @@ public class Quizz {
     @SerializedName("title")
     private String _title;
 
+    private String _url;
+
     @SerializedName("quizz")
     private List<Question> _questions;
 
@@ -44,6 +46,14 @@ public class Quizz {
 
     public void setTitle(String title) {
         this._title = title;
+    }
+
+    public String getUrl() {
+        return _url;
+    }
+
+    public void setUrl(String url) {
+        this._url = url;
     }
 
     public List<Question> getQuestions() {

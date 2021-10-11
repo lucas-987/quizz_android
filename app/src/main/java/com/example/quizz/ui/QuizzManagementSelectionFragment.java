@@ -26,6 +26,8 @@ import java.util.List;
 
 public class QuizzManagementSelectionFragment extends Fragment {
 
+    // TODO update quizz : if click on quizz item, dialog to modify title
+
     private RecyclerView recyclerView;
     private QuizzManagementSelectionAdapter adapter;
 

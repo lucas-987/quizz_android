@@ -21,6 +21,8 @@ import java.util.List;
 
 public class GameFragment extends Fragment {
 
+    // TODO : display question number (ex : 3/6)
+
     private GameViewModel gameViewModel;
 
     private TextView questionTextView;

@@ -22,6 +22,8 @@ import java.util.List;
 
 public class GameSelectionFragment extends Fragment {
 
+    // TODO : show number of questions in the quizz on the quizz item card
+
     private RecyclerView recyclerView;
     private GameSelectionAdapter adapter;
 

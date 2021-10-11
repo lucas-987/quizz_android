@@ -11,6 +11,7 @@ public class QuizzEntity {
 
     public String title;
 
+    public String url = null;
 
     public QuizzEntity(String title) {
         this.title = title;
